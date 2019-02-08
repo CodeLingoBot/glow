@@ -46,7 +46,7 @@ func (h *HeartBeater) StartChannelHeartBeat(killChan chan bool, chanName string)
 	}
 }
 
-// Starts heart beating
+// StartAgentHeartBeat starts heart beating
 func (h *HeartBeater) StartAgentHeartBeat(killChan chan bool, fn func(url.Values)) {
 	connected := false
 	for {

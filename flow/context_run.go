@@ -17,7 +17,7 @@ There are 3 running mode:
 var contextRunner ContextRunner
 var taskRunner TaskRunner
 
-// Invoked by driver task runner
+// RegisterContextRunner; Invoked by driver task runner
 func RegisterContextRunner(r ContextRunner) {
 	contextRunner = r
 }

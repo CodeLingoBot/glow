@@ -21,7 +21,7 @@ func TestSetupHttpClient(t *testing.T) {
 	}
 }
 
-// Starts a http server to serve '/' with the input handler. Returns the listener or any error.
+// listenAndServeAtRoot starts a http server to serve '/' with the input handler. Returns the listener or any error.
 func listenAndServeAtRoot(handler http.HandlerFunc, t *testing.T) net.Listener {
 	listener, err := net.Listen("tcp", "127.0.0.1:0")
 	if err != nil {

@@ -86,7 +86,7 @@ func (rs *RsyncServer) fileHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// go start a http server locally that will respond predictably to ranged requests
+// StartRsyncServer; go start a http server locally that will respond predictably to ranged requests
 func (rs *RsyncServer) StartRsyncServer(tlsConfig *tls.Config, listenOn string) {
 	s := http.NewServeMux()
 	s.HandleFunc("/list", rs.listHandler)

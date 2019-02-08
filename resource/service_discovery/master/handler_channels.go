@@ -42,7 +42,7 @@ func (tl *TeamMaster) listChannelsHandler(w http.ResponseWriter, r *http.Request
 	util.Json(w, r, http.StatusOK, freshChannels)
 }
 
-// put agent information list under a path
+// updateChannelHandler; put agent information list under a path
 func (tl *TeamMaster) updateChannelHandler(w http.ResponseWriter, r *http.Request) {
 	servicePort := r.FormValue("servicePort")
 	host := r.FormValue("serviceIp")

@@ -44,7 +44,7 @@ func NewReceiveChannel(tlsConfig *tls.Config, name string, offset uint64) *Recei
 	}
 }
 
-// Not thread safe
+// GetDirectChannel; Not thread safe
 func (rc *ReceiveChannel) GetDirectChannel(target string, chanBufferSize int) (chan []byte, error) {
 	if rc.Ch != nil {
 		return rc.Ch, nil

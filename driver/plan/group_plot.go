@@ -22,8 +22,7 @@ func PlotGraph(taskGroups []*TaskGroup, fc *flow.FlowContext) {
 	fmt.Println(buffer.String())
 }
 
-/*
-digraph G {
+/* plot; digraph G {
 	subgraph cluster0 {
 		node [style=filled,color=white];
 		style=filled;

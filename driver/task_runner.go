@@ -37,7 +37,7 @@ func (tr *TaskRunner) IsTaskMode() bool {
 	return tr.option.TaskGroupId >= 0 && tr.option.ContextId >= 0
 }
 
-// if this should not run, return false
+// Run; if this should not run, return false
 func (tr *TaskRunner) Run(fc *flow.FlowContext) {
 	if fc.Id != tr.option.ContextId {
 		return

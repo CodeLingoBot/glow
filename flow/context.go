@@ -36,7 +36,7 @@ func (fc *FlowContext) NewStep() (step *Step) {
 	return
 }
 
-// the tasks should run on the source dataset shard
+// AddOneToOneStep; the tasks should run on the source dataset shard
 func (f *FlowContext) AddOneToOneStep(input *Dataset, output *Dataset) (step *Step) {
 	step = f.NewStep()
 	FromStepToDataset(step, output)
@@ -58,7 +58,7 @@ func (f *FlowContext) AddOneToOneStep(input *Dataset, output *Dataset) (step *St
 	return
 }
 
-// the task should run on the destination dataset shard
+// AddAllToOneStep; the task should run on the destination dataset shard
 func (f *FlowContext) AddAllToOneStep(input *Dataset, output *Dataset) (step *Step) {
 	step = f.NewStep()
 	FromStepToDataset(step, output)
@@ -75,7 +75,7 @@ func (f *FlowContext) AddAllToOneStep(input *Dataset, output *Dataset) (step *St
 	return
 }
 
-// the task should run on the source dataset shard
+// AddOneToAllStep; the task should run on the source dataset shard
 // input is nil for initial source dataset
 func (f *FlowContext) AddOneToAllStep(input *Dataset, output *Dataset) (step *Step) {
 	step = f.NewStep()
@@ -126,7 +126,7 @@ func (f *FlowContext) AddLinkedNToOneStep(input *Dataset, m int, output *Dataset
 	return
 }
 
-// All dataset should have the same number of shards.
+// MergeDatasets1ShardTo1Step; All dataset should have the same number of shards.
 func (f *FlowContext) MergeDatasets1ShardTo1Step(inputs []*Dataset, output *Dataset) (step *Step) {
 	step = f.NewStep()
 	FromStepToDataset(step, output)

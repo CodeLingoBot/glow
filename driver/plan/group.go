@@ -44,7 +44,7 @@ func isMergeableDataset(ds *flow.Dataset, taskCount int) bool {
 	return true
 }
 
-// find mergeable parent step or itself if parent is not mergeable
+// findAncestorStepId; mergeable parent step or itself if parent is not mergeable
 func findAncestorStepId(step *flow.Step) (int, bool) {
 	current := step
 	taskCount := len(current.Tasks)
@@ -72,7 +72,7 @@ func findAncestorStepId(step *flow.Step) (int, bool) {
 	return current.Id, true
 }
 
-// group local steps into one step group
+// translateToStepGroups; local steps into one step group
 func translateToStepGroups(fc *flow.FlowContext) []*StepGroup {
 	// use array instead of map to ensure consistent ordering
 	stepId2StepGroup := make([]*StepGroup, len(fc.Steps))
@@ -114,7 +114,7 @@ func translateToStepGroups(fc *flow.FlowContext) []*StepGroup {
 	return ret
 }
 
-// group local tasks into one task group
+// translateToTaskGroups; local tasks into one task group
 func translateToTaskGroups(stepId2StepGroup []*StepGroup) (ret []*TaskGroup) {
 	for _, stepGroup := range stepId2StepGroup {
 		assertSameNumberOfTasks(stepGroup.Steps)

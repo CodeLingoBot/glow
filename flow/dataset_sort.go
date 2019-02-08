@@ -11,7 +11,7 @@ func (d *Dataset) Sort(f interface{}) (ret *Dataset) {
 	return d.LocalSort(f).MergeSorted(f)
 }
 
-// f(V, V) bool : less than function
+// LocalSort; f(V, V) bool : less than function
 // New Dataset contains K,V
 func (d *Dataset) LocalSort(f interface{}) *Dataset {
 	if f == nil && d.IsKeyLocalSorted {

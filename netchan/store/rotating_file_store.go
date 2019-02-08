@@ -251,7 +251,7 @@ func backupName(name string, local bool) string {
 	return filepath.Join(dir, fmt.Sprintf("%s-%s%s", prefix, timestamp, ext))
 }
 
-// THIS IS NOT USED!
+// openExistingOrNew; IS NOT USED!
 // openExistingOrNew opens the logfile if it exists and if the current write
 // would not put it over MaxMegaByte.  If there is no such file or the write would
 // put it over the MaxMegaByte, a new file is created.
@@ -340,7 +340,7 @@ func (l *RotatingFileStore) Destroy() {
 	os.Remove(l.filename())
 }
 
-// oldLogFiles returns the list of backup log files stored in the same
+// listOldLogFiles returns the list of backup log files stored in the same
 // directory as the current log file, sorted by ModTime
 func (l *RotatingFileStore) listOldLogFiles() ([]logInfo, error) {
 	os.MkdirAll(l.dir(), 0755)

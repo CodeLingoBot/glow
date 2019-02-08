@@ -40,7 +40,7 @@ func TestStruct(t *testing.T) {
 	}
 }
 
-// Tests registration is needed to encode/decode objects with gob.
+// TestNormal tests registration is needed to encode/decode objects with gob.
 func TestNormal(t *testing.T) {
 	x := StrangeType{
 		X: true,

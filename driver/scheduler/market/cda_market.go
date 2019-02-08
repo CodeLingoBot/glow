@@ -58,7 +58,7 @@ func (m *Market) SetFetchFunction(fn func([]Demand)) *Market {
 	return m
 }
 
-// retChan should be a buffered channel
+// AddDemand; should be a buffered channel
 func (m *Market) AddDemand(r Requirement, bid float64, retChan chan Supply) {
 	m.Lock.Lock()
 	defer m.Lock.Unlock()

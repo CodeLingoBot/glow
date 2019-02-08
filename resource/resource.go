@@ -84,7 +84,7 @@ func (l *Location) URL() string {
 	return l.Server + ":" + strconv.Itoa(l.Port)
 }
 
-// the distance is a relative value, similar to network lantency
+// Distance is a relative value, similar to network lantency
 func (a Location) Distance(b Location) float64 {
 	if a.DataCenter != b.DataCenter {
 		return 1000

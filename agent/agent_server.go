@@ -140,7 +140,7 @@ func (r *AgentServer) Stop() {
 	r.wg.Wait()
 }
 
-// Handles incoming requests.
+// handleRequest handles incoming requests.
 func (r *AgentServer) handleRequest(conn net.Conn) {
 
 	buf := make([]byte, 4)

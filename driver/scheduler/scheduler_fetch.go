@@ -14,7 +14,7 @@ import (
 	"github.com/chrislusf/glow/util"
 )
 
-// Requirement is TaskGroup
+// Fetch; Requirement is TaskGroup
 // Object is Agent's Location
 func (s *Scheduler) Fetch(demands []market.Demand) {
 	var request resource.AllocationRequest

@@ -83,7 +83,7 @@ func RemoteDirectExecute(tlsConfig *tls.Config, server string, command *cmd.Cont
 	return doExecute(server, conn, command)
 }
 
-// doExecute() sends a request and expects the output from the connection
+// doExecute sends a request and expects the output from the connection
 func doExecute(server string, conn io.ReadWriteCloser, command *cmd.ControlMessage) error {
 
 	buf := make([]byte, 4)
@@ -123,7 +123,7 @@ func RemoteDirectCommand(tlsConfig *tls.Config, server string, command *cmd.Cont
 	return doCommand(server, conn, command)
 }
 
-// doCommand() sends a request and expects a response object
+// doCommand sends a request and expects a response object
 func doCommand(server string, conn io.ReadWriteCloser, command *cmd.ControlMessage) (response *cmd.ControlMessage, err error) {
 
 	buf := make([]byte, 4)

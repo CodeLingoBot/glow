@@ -46,7 +46,7 @@ func _buildMapperFunction(f interface{}, task *Task) func(input reflect.Value) {
 	return _buildMapperFunctionWithoutChannel(fn, outChan)
 }
 
-// if last parameter in the function is a channel
+// _buildMapperFunctionWithChannel; if last parameter in the function is a channel
 // use the channel element type as output type
 func _buildMapperFunctionWithChannel(fn, outChan reflect.Value) func(input reflect.Value) {
 	return func(input reflect.Value) {
@@ -113,7 +113,7 @@ func _functionCallBasedOnInputType(fn, input reflect.Value) (outs []reflect.Valu
 	return
 }
 
-// f(A)bool
+// Filter; f(A)bool
 func (d *Dataset) Filter(f interface{}) *Dataset {
 	ret, step := add1ShardTo1Step(d, d.Type)
 	ret.IsKeyPartitioned = d.IsKeyPartitioned
@@ -138,7 +138,7 @@ func add1ShardTo1Step(d *Dataset, nextDataType reflect.Type) (ret *Dataset, step
 	return
 }
 
-// the value over the outChan is always reflect.Value
+// sendMapOutputs; the value over the outChan is always reflect.Value
 // but the inner values are always actual interface{} object
 func sendMapOutputs(outChan reflect.Value, values []reflect.Value) {
 	if !outChan.IsValid() {

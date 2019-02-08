@@ -87,7 +87,7 @@ func (fcd *FlowContextDriver) Plot(fc *flow.FlowContext) {
 	plan.PlotGraph(fcd.taskGroups, fc)
 }
 
-// driver runs on local, controlling all tasks
+// Run; driver runs on local, controlling all tasks
 func (fcd *FlowContextDriver) Run(fc *flow.FlowContext) {
 
 	fcd.checkParameters()

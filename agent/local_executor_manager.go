@@ -32,7 +32,7 @@ func (m *LocalExecutorManager) getExecutorStatus(id uint32) *AgentExecutorStatus
 	return executorStatus
 }
 
-// purge executor status older than 24 hours to save memory
+// purgeExpiredEntries; executor status older than 24 hours to save memory
 func (m *LocalExecutorManager) purgeExpiredEntries() {
 	for {
 		func() {

@@ -22,8 +22,7 @@ type ReleaseTaskGroupInputs struct {
 	WaitGroup   *sync.WaitGroup
 }
 
-/*
-resources are leased to driver, expires every X miniute unless renewed.
+/* EventLoop resources are leased to driver, expires every X miniute unless renewed.
 1. request resource
 2. release resource
 */

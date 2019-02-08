@@ -37,7 +37,7 @@ func (m *Message) Bytes() []byte {
 	return append(m.data, byte(m.flag))
 }
 
-// data has actual data plus one byte of flag
+// ReadBytes; data has actual data plus one byte of flag
 func ReadBytes(r io.Reader, lenBuf []byte) (flag ControlFlag, m *Message, err error) {
 	_, err = io.ReadAtLeast(r, lenBuf, 4)
 	if err == io.EOF {
@@ -55,7 +55,7 @@ func ReadBytes(r io.Reader, lenBuf []byte) (flag ControlFlag, m *Message, err er
 	return message.Flag(), message, nil
 }
 
-// data has actual data plus one byte of flag
+// WriteBytes; data has actual data plus one byte of flag
 func WriteBytes(w io.Writer, lenBuf []byte, m *Message) {
 	rawData := m.Bytes()
 	size := len([]byte(rawData))
